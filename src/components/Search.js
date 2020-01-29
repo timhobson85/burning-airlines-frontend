@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 
-const URL = 'url'
+const URL = 'http://localhost:3000/flights.json'
 
 class Search extends React.Component {
 
@@ -19,13 +19,15 @@ class Search extends React.Component {
 
   handleSubmit = (event) => {
     console.log('submitted!', this.state);
+    console.log('from:', this.state.from);
+    console.log('to:', this.state.to);
     this.getFlights();
   }
 
   getFlights = () => {
     axios.get( URL )
     .then( res => console.log(res) )
-    .catch( err => console.warn(err) );
+    .catch( err => console.warn('it broke', err) );
   }
 
 
