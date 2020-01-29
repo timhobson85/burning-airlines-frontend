@@ -5,9 +5,14 @@ const URL = 'http://localhost:3000/flights.json'
 
 class Search extends React.Component {
 
+  results = {
+    flights: []
+  }
+
   state = {
     from: '',
-    to: ''
+    to: '',
+    flights: []
   }
 
   handleFromChange = (event) => {
@@ -18,21 +23,30 @@ class Search extends React.Component {
   }
 
   handleSubmit = (event) => {
+    event.preventDefault();
     console.log('submitted!', this.state);
     console.log('from:', this.state.from);
     console.log('to:', this.state.to);
     this.getFlights();
   }
 
+  // function = filterResults(results) => {
+  //   console.log(results)
+  //   //(results.filter(flight => flight.destination.includes( this.state.to ))
+  // }
+
   getFlights = () => {
     axios.get( URL )
-    .then( res => console.log(res) )
+    .then( res => {
+      // console.log(res.filter(flight => flight.destination.includes( this.state.to )))
+      let results = res.data
+      console.log('filter:', results.filter(flight => flight.destination.includes( this.state.to )))
+      console.log('results are', results);
+      this.setState({flights: res.data})
+      console.log('flights:', this.state.flights);
+    } )
     .catch( err => console.warn('it broke', err) );
   }
-
-
-
-
 
   render(){
     return(
