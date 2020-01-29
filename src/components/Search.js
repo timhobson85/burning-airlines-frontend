@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import FlightInfo from './FlightInfo'
 
 const URL = 'http://localhost:3000/flights.json'
 
@@ -40,9 +41,9 @@ class Search extends React.Component {
     .then( res => {
       // console.log(res.filter(flight => flight.destination.includes( this.state.to )))
       let results = res.data
-      console.log('filter:', results.filter(flight => flight.destination.includes( this.state.to )))
-      console.log('results are', results);
-      this.setState({flights: res.data})
+      let filtered = results.filter(flight => flight.destination.includes( this.state.to ) && flight.origin.includes( this.state.from ))
+      console.log('results are', filtered);
+      this.setState({flights: filtered})
       console.log('flights:', this.state.flights);
     } )
     .catch( err => console.warn('it broke', err) );
@@ -58,8 +59,9 @@ class Search extends React.Component {
           <input type="submit" value="cancel"/>
           <input type="submit" value="done"/>
         </form>
-        <p>Search Results</p>
-        <p>date flightnumber from to plane</p>
+        {
+          (this.state.flights.length > 0) && <FlightInfo flights={this.state.flights}/>
+        }
       </div>
     )
   }
