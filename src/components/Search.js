@@ -1,14 +1,14 @@
 import React from 'react'
 import axios from 'axios'
-import FlightInfo from './FlightInfo'
+import SearchResults from './SearchResults'
 
 const URL = 'http://localhost:3000/flights.json'
 
 class Search extends React.Component {
 
-  results = {
-    flights: []
-  }
+  // results = {
+  //   flights: []
+  // }
 
   state = {
     from: '',
@@ -60,7 +60,7 @@ class Search extends React.Component {
           <input type="submit" value="done"/>
         </form>
         {
-          (this.state.flights.length > 0) && <FlightInfo flights={this.state.flights}/>
+          (this.state.flights.length > 0) && <SearchResults flights={this.state.flights}/>
         }
       </div>
     )
