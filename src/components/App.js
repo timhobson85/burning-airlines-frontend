@@ -3,6 +3,7 @@ import {Route, Link, HashRouter as Router} from 'react-router-dom'
 import Home from './Home'
 import Search from './Search'
 import Flights from './Flights'
+import SearchResults from './SearchResults'
 
 
 class App extends React.Component {
@@ -20,8 +21,8 @@ class App extends React.Component {
         <h2>app</h2>
 
         <Route path ='/' component={Home} />
-        <Route path ='/search' component={Search} />
-        <Route path ='/flights' component={Flights} />
+        <Route exact path='/search' component={Search} />
+        <Route exact path='/flights' component={Flights} />
 
         </Router>
       </div>
