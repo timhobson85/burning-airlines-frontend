@@ -6,7 +6,7 @@ class Home extends React.Component {
     return(
       <div className='App'>
         <h2>Home</h2>
-        <h3>fuego flights</h3>
+        <h3>🔥fly fuego 🔥</h3>
       </div>
     )
   }

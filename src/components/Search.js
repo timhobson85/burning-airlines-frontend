@@ -56,7 +56,6 @@ class Search extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <input onChange={this.handleFromChange} placeholder="From" type="text"/>
           <input onChange={this.handleToChange} placeholder="To" type="text"/><br/>
-          <input type="submit" value="cancel"/>
           <input type="submit" value="done"/>
         </form>
         {

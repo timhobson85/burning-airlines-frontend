@@ -4,8 +4,12 @@ import React from 'react'
 //   return `https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}_${size}.jpg`;
 // }
 
-const handleClick = () => {
-  console.log('clicked');
+const handleClick = ( id ) => {
+  console.log('clicked', id);
+  // we want this to send us to flight/:flightnum with flightnum so we can see the seating arrangement
+  const route = `/flight/${ id }`
+  console.log('new route:', route);
+  this.props.history.push( route )
 }
 
 const SearchResults = (props) => {
@@ -13,7 +17,7 @@ const SearchResults = (props) => {
 
   return props.flights.map( flight =>(
     <div className="searchResults" key={flight.id}>
-      <p>{flight.date} - {flight.origin} - {flight.destination} - {flight.flightnum}</p><button onClick={handleClick(flight.flightnum)}>book flight</button>
+      <p>{flight.date} - {flight.origin} - {flight.destination} - {flight.flightnum} - {flight.airplane.name}</p><button onClick={() => handleClick(flight.flightnum)}>book flight</button>
     </div>
   ));
 
