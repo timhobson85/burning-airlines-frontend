@@ -8,7 +8,7 @@ const URL = 'http://localhost:3000/flights.json'
 class Flight extends React.Component {
 
   state = {
-    flightDetails: {}
+    flightDetails: []
   }
 
   componentDidMount(){
