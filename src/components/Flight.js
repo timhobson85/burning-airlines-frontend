@@ -3,7 +3,7 @@ import axios from 'axios'
 import FlightResults from './FlightResults'
 
 const URL = 'http://localhost:3000/flights.json'
-
+let flight;
 
 class Flight extends React.Component {
 
@@ -20,19 +20,30 @@ class Flight extends React.Component {
       let filtered = results.filter( flight => flight.flightnum.includes( flightnumQuery ))
       console.log(filtered);
       this.setState({flightDetails: filtered})
+      console.log(this.state);
+      console.log(this.state.flightDetails[0].origin);
+      // console.log('flight:', flight);
     })
     .catch( console.warn)
   }
 
   render(){
+
+    flight = this.state.flightDetails[0]
+
     return(
+
       <div className='App'>
         <h3>flights</h3>
-        <p>flight results</p>
+
+
+
           {
-            (this.state.flightDetails.length > 0) && <FlightResults flightDetails={this.state.flightDetails}/>
+
+            (this.state.flightDetails.length > 0) && <FlightResults oldProps={this.props} flightDetails={this.state.flightDetails}/>
           }
       </div>
+
     )
   }
 

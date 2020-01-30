@@ -72,7 +72,6 @@ class SearchResults extends React.Component {
         <h2>search results</h2>
 
         {
-
           this.state.flights.length === 0
           ?
           <h3>no results</h3>
@@ -81,7 +80,6 @@ class SearchResults extends React.Component {
             <div className="searchResults" key={flights.id}>
               <p>{flights.date} - {flights.origin} - {flights.destination} - {flights.flightnum} - {flights.airplane.name}</p><button onClick={() => this.handleClick(flights.flightnum)}>book flight</button>
             </div>)
-
         }
 
       </div>
