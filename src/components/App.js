@@ -21,7 +21,8 @@ class App extends React.Component {
         <h2>app</h2>
 
         <Route path ='/' component={Home} />
-        <Route exact path='/search' component={Search} />
+        <Route path='/search' component={Search} />
+        <Route exact path='/search/results/:from/:to' component={SearchResults} />
         <Route exact path='/flight/:query' component={Flight} />
 
         </Router>

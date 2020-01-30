@@ -15,8 +15,8 @@ class FlightResults extends React.Component {
          <p>
            {this.props.flightDetails[0].date} - Flight: {this.props.flightDetails[0].flightnum} - {this.props.flightDetails[0].origin} > {this.props.flightDetails[0].destination}
          </p>
-         <p>Rows: {this.props.flightDetails[0].airplane.row} <br/>
-         Columns: {this.props.flightDetails[0].airplane.column} <br/>
+         <p>Rows: {this.props.flightDetails[0].airplane.rows} <br/>
+         Columns: {this.props.flightDetails[0].airplane.columns} <br/>
        PlaneName: {this.props.flightDetails[0].airplane.name}</p>
       </div>
     )
