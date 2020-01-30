@@ -18,7 +18,9 @@ code {
   width: 40vw;
   padding: 10px;
   margin: 5px;
+  margin-bottom: 20px;
   text-align: center;
+  box-shadow: -5px 5px 0 0px black;
 }
 
 body {
@@ -26,4 +28,36 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+#locale {
+  font-size: 5rem;
+}
+
+.flight {
+  background-color: pink;
+  box-shadow: -5px 5px 0 0px black;
+  padding: 20px;
+  width: 40vw;
+}
+
+button {
+  padding: 10px;
+  border-color: black;
+  color: black;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid black;
+  margin: 5px;
+  border-color: black;
+  color: black;
+  min-width: 100px;
+  text-align: center;
+}
+
+img {
+  box-shadow: -5px 5px 0 0px rgba(0, 0, 0, 0.54);
+
 }

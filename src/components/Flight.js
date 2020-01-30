@@ -34,9 +34,6 @@ class Flight extends React.Component {
     return(
 
       <div className='App'>
-        <h3>flights</h3>
-
-
 
           {
 
