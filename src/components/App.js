@@ -17,8 +17,8 @@ class App extends React.Component {
             <Link to="/search">Search</Link> |&nbsp;
             <Link to="/flight">Flight</Link> |&nbsp;
           </nav>
-        <h1>burning airlines</h1>
-        <h2>app</h2>
+        <h1>Burning Airlines</h1>
+        <h2>App</h2>
 
         <Route path ='/' component={Home} />
         <Route path='/search' component={Search} />
