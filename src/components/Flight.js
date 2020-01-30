@@ -42,6 +42,8 @@ class Flight extends React.Component {
 
             (this.state.flightDetails.length > 0) && <FlightResults oldProps={this.props} flightDetails={this.state.flightDetails}/>
           }
+
+
       </div>
 
     )
