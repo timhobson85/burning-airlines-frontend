@@ -17,14 +17,12 @@ class App extends React.Component {
             <Link to="/search">Search</Link> |&nbsp;
             <Link to="/flight">Flight</Link> |&nbsp;
           </nav>
-        <h1>burning airlines</h1>
-        <h2>app</h2>
+        <h1><span>🔥</span>fly fuego<span>🔥</span></h1>
 
-        <Route path ='/' component={Home} />
+        <Route exact path ='/' component={Home} />
         <Route path='/search' component={Search} />
         <Route exact path='/search/results/:from/:to' component={SearchResults} />
         <Route exact path='/flight/:query' component={Flight} />
-
         </Router>
       </div>
     )

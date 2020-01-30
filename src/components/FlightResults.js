@@ -4,10 +4,10 @@ import SeatSelect from './SeatSelect';
 class FlightResults extends React.Component {
 
   componentDidMount(){
-    console.log('loaded');
+    // console.log('loaded');
     // console.log(this.props.flightDetails[0].id);
     let flightDetails = this.props.flightDetails[0]
-    console.log(flightDetails);
+    // console.log(flightDetails);
   }
 
   render(){
@@ -21,7 +21,7 @@ class FlightResults extends React.Component {
        PlaneName: {this.props.flightDetails[0].airplane.name}</p>
 
      {
-       <SeatSelect dataFromFlightResults= {this.flightDetails}/>
+       <SeatSelect dataFromFlightResults={this.props.flightDetails}/>
      }
       </div>
     )

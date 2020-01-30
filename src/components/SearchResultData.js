@@ -3,16 +3,16 @@ import React from 'react'
 class SearchResultData extends React.Component {
 
   handleClick = ( id ) => {
-    console.log('clicked', id);
+    // console.log('clicked', id);
     // we want this to send us to flight/:flightnum with flightnum so we can see the seating arrangement
     const route = `/flight/${ id }`
-    console.log('new route:', route);
+    // console.log('new route:', route);
     // this.props.history.push( route )
     // console.log(props);
   }
 
   componentDidMount(){
-    console.log(this.props.flights);
+    // console.log(this.props.flights);
   }
 
   render(){

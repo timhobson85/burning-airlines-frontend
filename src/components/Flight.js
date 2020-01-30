@@ -13,15 +13,15 @@ class Flight extends React.Component {
 
   componentDidMount(){
     const flightnumQuery = this.props.match.params.query
-    console.log(flightnumQuery);
+    // console.log(flightnumQuery);
     axios.get( URL )
     .then( res => {
       let results = res.data
       let filtered = results.filter( flight => flight.flightnum.includes( flightnumQuery ))
-      console.log(filtered);
+      // console.log(filtered);
       this.setState({flightDetails: filtered})
-      console.log(this.state);
-      console.log(this.state.flightDetails[0].origin);
+      // console.log(this.state);
+      // console.log(this.state.flightDetails[0].origin);
       // console.log('flight:', flight);
     })
     .catch( console.warn)

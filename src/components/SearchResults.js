@@ -9,10 +9,10 @@ class SearchResults extends React.Component {
   }
 
   handleClick = ( id ) => {
-    console.log('clicked', id);
+    // console.log('clicked', id);
     // we want this to send us to flight/:flightnum with flightnum so we can see the seating arrangement
     const route = `/flight/${ id }`
-    console.log('new route:', route);
+    // console.log('new route:', route);
     this.props.history.push( route )
     // console.log(props);
   }
@@ -20,8 +20,8 @@ class SearchResults extends React.Component {
   componentDidMount(){
     let flightFrom = this.props.match.params.from
     let flightTo = this.props.match.params.to
-    console.log('to:', flightTo);
-    console.log('from:', flightFrom);
+    // console.log('to:', flightTo);
+    // console.log('from:', flightFrom);
     // getFlights = () => {
     axios.get( URL )
     .then( res => {
@@ -29,17 +29,17 @@ class SearchResults extends React.Component {
       let results = res.data
       let filtered = results.filter(flight => flight.destination.includes( flightTo ) && flight.origin.includes( flightFrom ))
       this.setState({flights: filtered})
-      console.log('state.flights:', this.state.flights);
+      // console.log('state.flights:', this.state.flights);
     } )
     .catch( err => console.warn('it broke', err) );
   }
 
   componentDidUpdate(prevProps){
-    console.log(`update!`);
+    // console.log(`update!`);
     const oldQuery = prevProps.match.params
-    console.log('oldQuery:', oldQuery);
+    // console.log('oldQuery:', oldQuery);
     const newQuery = this.props.match.params
-    console.log('newQuery:', newQuery);
+    // console.log('newQuery:', newQuery);
     if (newQuery === oldQuery) {
       return
     }
@@ -52,7 +52,7 @@ class SearchResults extends React.Component {
       let results = res.data
       let filtered = results.filter(flight => flight.destination.includes( flightTo ) && flight.origin.includes( flightFrom ))
       this.setState({flights: filtered})
-      console.log('state.flights:', this.state.flights);
+      // console.log('state.flights:', this.state.flights);
     } )
     .catch( err => console.warn('it broke', err) );
   }

@@ -25,13 +25,13 @@ class Search extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log('submitted!', this.state);
+    // console.log('submitted!', this.state);
     let from = this.state.from;
-    console.log('from:', from);
+    // console.log('from:', from);
     let to = this.state.to;
-    console.log('to:', to);
+    // console.log('to:', to);
     const route = `/search/results/${from}/${to}`
-    console.log('route:', route);
+    // console.log('route:', route);
     // console.log(this.props.history);
     this.props.history.push( route )
 

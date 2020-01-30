@@ -5,8 +5,8 @@ class Home extends React.Component {
   render(){
     return(
       <div className='App'>
-        <h2>Home</h2>
-        <h3>🔥fly fuego 🔥</h3>
+        <img src="https://media.graytvinc.com/images/810*607/RICE+LAKE+PLANE+FIRE1.jpg" alt=""/>
+        
       </div>
     )
   }
