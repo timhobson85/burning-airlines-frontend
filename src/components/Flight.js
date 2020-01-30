@@ -32,6 +32,8 @@ class Flight extends React.Component {
           {
             (this.state.flightDetails.length > 0) && <FlightResults flightDetails={this.state.flightDetails}/>
           }
+
+
       </div>
     )
   }

@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import SeatSelect from './SeatSelect';
 
 class FlightResults extends React.Component {
 
@@ -18,6 +19,10 @@ class FlightResults extends React.Component {
          <p>Rows: {this.props.flightDetails[0].airplane.rows} <br/>
          Columns: {this.props.flightDetails[0].airplane.columns} <br/>
        PlaneName: {this.props.flightDetails[0].airplane.name}</p>
+
+     {
+       <SeatSelect dataFromFlightResults= {this.flightDetails}/>
+     }
       </div>
     )
   }
